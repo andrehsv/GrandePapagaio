@@ -6,23 +6,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		Pattern regexPostar = Pattern.compile("->"),
-				regexLer = Pattern.compile("mural"),
-				regexSegue = Pattern.compile("segue");
+			regexLer = Pattern.compile("mural"),
+			regexSegue = Pattern.compile("segue");
 		
 		Matcher matchPostar,
-				matchLer,
-				matchSegue;
+			matchLer,
+			matchSegue;
 		
 		GrandePapagaio gp = new GrandePapagaio();
         String comando;
         String prompt = "----------------------------\n" +
-        				"G R A N D E  P A P A G A I O\n" +
-        				"----------------------------\n\n" +
-        				"COMANDOS:\n" +
-        				"- Postar: <nomedousuario> -> <post>\n" +
-        				"- Ler: mural <nomedousuario>\n" +
-        				"- Seguir: <nomedousuario> segue <outrousuario>\n" +
-        				"*Novos usuarios sao criados ao postar e ao seguir\n";
+        		"G R A N D E  P A P A G A I O\n" +
+        		"----------------------------\n\n" +
+        		"COMANDOS:\n" +
+        		"- Postar: <nomedousuario> -> <post>\n" +
+        		"- Ler: mural <nomedousuario>\n" +
+        		"- Seguir: <nomedousuario> segue <outrousuario>\n" +
+        		"*Novos usuarios sao criados ao postar e ao seguir\n";
         System.out.println(prompt);
         
         while (true) {
@@ -34,8 +34,8 @@ public class Main {
             matchSegue = regexSegue.matcher(comandoFormatado);
             
             boolean isPostar = matchPostar.find(),
-            		isLer = matchLer.find(),
-            		isSegue = matchSegue.find();
+            	    isLer = matchLer.find(),
+            	    isSegue = matchSegue.find();
             
             if (isPostar) {
                 gp.postar(comandoFormatado);
