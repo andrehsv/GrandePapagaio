@@ -18,6 +18,7 @@ public class Usuario extends GrandePapagaio {
      */
     public Usuario(String nome) {
         this.nome = nome;
+        System.out.println("[Novo usuario adicionado: " + nome + "]");
     }
     
     /**
@@ -34,7 +35,7 @@ public class Usuario extends GrandePapagaio {
      */
     public void adicionarPost(Post post) {
         this.posts.add(post);
-        System.out.println("Post adicionado com sucesso ao mural de " + nome);
+        System.out.println("[Post adicionado com sucesso ao mural de " + nome + "]");
     }
     
     /**

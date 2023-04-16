@@ -61,7 +61,7 @@ public class GrandePapagaio {
                 }
             }
         } else {
-            throw new UsuarioInexistenteException("O usuário não existe", SEGUIDO);
+            throw new UsuarioInexistenteException("O usuario nao existe", SEGUIDO);
         }
         
     }
@@ -95,10 +95,14 @@ public class GrandePapagaio {
      * @category Identificador de comando
      * @param comando
      */
-    public void ler(String comando) {
+    public void ler(String comando) throws UsuarioInexistenteException {
         String[] comandoSplit = comando.split("mural");
         final String NOME = comandoSplit[1].strip();
-        mostrarPosts(NOME);
+        
+        if(existeUsuario(NOME))
+        	mostrarPosts(NOME);
+        else
+        	throw new UsuarioInexistenteException("O usuario nao existe", NOME);
     }
     
     /**
